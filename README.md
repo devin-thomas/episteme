@@ -1,5 +1,7 @@
 # Episteme
 
+Live site: https://episteme-api.netlify.app
+
 Episteme is an API playground for 20 public APIs that need no key and no signup. You pick an API, adjust its parameters, send the request, and see the response rendered as something readable (a forecast, a card image, a satellite scene, a protein) next to the raw JSON and a ready-to-copy `curl` command.
 
 The APIs are grouped into four phases named after the four combinations of knowing and not knowing.
