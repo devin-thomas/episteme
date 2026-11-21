@@ -1,0 +1,101 @@
+{
+  "tvmaze-shows": [
+    {
+      "show": {
+        "id": 1121,
+        "url": "https://www.tvmaze.com/shows/1121/cowboy-bebop",
+        "name": "Cowboy Bebop",
+        "type": "Animation",
+        "language": "Japanese",
+        "premiered": "1998-10-24",
+        "rating": {
+          "average": 8.3
+        },
+        "network": {
+          "id": 158,
+          "name": "WOWOW",
+          "country": {
+            "name": "Japan",
+            "code": "JP",
+            "timezone": "Asia/Tokyo"
+          },
+          "officialSite": null
+        }
+      }
+    }
+  ],
+  "nager-holidays": [
+    {
+      "date": "2027-01-01",
+      "name": "New Year's Day",
+      "countryCode": "US",
+      "nationalHoliday": true,
+      "subdivisionCodes": null,
+      "holidayTypes": [
+        "Public",
+        "Bank"
+      ]
+    },
+    {
+      "date": "2027-01-18",
+      "name": "Martin Luther King, Jr. Day",
+      "countryCode": "US",
+      "nationalHoliday": true,
+      "subdivisionCodes": null,
+      "holidayTypes": [
+        "Public",
+        "Bank"
+      ]
+    }
+  ],
+  "zippopotam-postcodes": {
+    "country": "United States",
+    "country abbreviation": "US",
+    "post code": "78205",
+    "places": [
+      {
+        "place name": "San Antonio",
+        "longitude": "-98.4925",
+        "latitude": "29.4237",
+        "state": "Texas",
+        "state abbreviation": "TX"
+      }
+    ]
+  },
+  "free-dictionary": [
+    {
+      "word": "serendipity",
+      "phonetic": "/ˌsɛ.ɹən.ˈdɪ.pɪ.ti/",
+      "sourceUrls": [
+        "https://en.wiktionary.org/wiki/serendipity"
+      ],
+      "license": {
+        "name": "CC BY-SA 3.0",
+        "url": "https://creativecommons.org/licenses/by-sa/3.0"
+      },
+      "meanings": [
+        {
+          "partOfSpeech": "noun",
+          "definitions": [
+            {
+              "definition": "A fixture definition used to exercise the dictionary layout."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "itunes-search": {
+    "resultCount": 1,
+    "results": [
+      {
+        "kind": "song",
+        "trackName": "One More Time",
+        "artistName": "Daft Punk",
+        "trackViewUrl": "https://music.apple.com/us/album/one-more-time/697194953?i=697195462&uo=4",
+        "trackId": 697195462,
+        "releaseDate": "2000-11-30T08:00:00Z"
+      }
+    ]
+  }
+}

@@ -41,7 +41,16 @@ export default function App() {
     }
   }, [darkMode]);
 
-  const [activeApiId, setActiveApiId] = useState<string>(APIS[0].id);
+  const [activeApiId, setActiveApiId] = useState<string>(() => {
+    const requested = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('api');
+    return APIS.find((api) => api.id === requested)?.id ?? APIS[0].id;
+  });
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    url.searchParams.set('api', activeApiId);
+    window.history.replaceState(null, '', url);
+  }, [activeApiId]);
   const [viewMode, setViewMode] = useState<'workbench' | 'matrix'>('workbench');
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -119,7 +128,7 @@ export default function App() {
         const json = (await resp.json()) as ExecutionResult & { error?: string };
         if (controller.signal.aborted) return;
 
-        if (!resp.ok || json.error) {
+        if (!resp.ok || json.error || json.status >= 400) {
           setResultsByApi((prev) => ({
             ...prev,
             [apiToRun.id]: {
@@ -129,7 +138,7 @@ export default function App() {
               sizeBytes: json.sizeBytes ?? 0,
               contentType: json.contentType ?? 'text/plain',
               data: json.data ?? null,
-              error: json.error || `Upstream returned status ${resp.status}`,
+              error: json.error || `Upstream returned HTTP ${json.status || resp.status} ${json.statusText || ''}`.trim(),
             },
           }));
         } else {
@@ -240,8 +249,8 @@ export default function App() {
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Filter 20 APIs..."
-            aria-label="Filter 20 APIs"
+            placeholder={`Filter ${APIS.length} APIs...`}
+            aria-label={`Filter ${APIS.length} APIs`}
             className="w-full pl-8 pr-3 py-1.5 text-xs bg-slate-100/80 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-md text-slate-900 dark:text-slate-100 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-600/30 focus:border-blue-600"
           />
         </div>
@@ -426,7 +435,7 @@ export default function App() {
       {/* Main Workspace */}
       <div className="flex-1 flex min-h-0">
         {/* Desktop Sidebar */}
-        <aside className="hidden lg:flex w-72 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f131c] flex-col">
+        <aside className="hidden lg:flex w-72 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-[#0f131c] flex-col sticky top-14 h-[calc(100dvh-3.5rem)] self-start">
           {renderSidebarContent()}
         </aside>
 
@@ -451,7 +460,7 @@ export default function App() {
                   <span className="truncate">{activePhase.epistemicLabel}</span>
                 </div>
                 <div className="text-xs text-slate-500 dark:text-slate-400 tabular-nums whitespace-nowrap">
-                  Endpoint {activeApi.index} of 20 · No API key required
+                  Endpoint {activeApi.index} of {APIS.length} · No API key required
                 </div>
               </div>
 
@@ -611,7 +620,7 @@ export default function App() {
               {/* 2-Column Split Workbench: SDK Code + Live Response Studio */}
               <div className="grid grid-cols-1 xl:grid-cols-12 gap-5 items-stretch">
                 {/* Left Column: SDK / Query Code Showcase */}
-                <div className="xl:col-span-5 flex flex-col min-h-[420px]">
+                <div className="xl:col-span-5 flex flex-col min-w-0 min-h-[420px]">
                   <CodePane
                     sdkCode={sdkCode}
                     curlCode={curlCode}
@@ -622,7 +631,7 @@ export default function App() {
                 </div>
 
                 {/* Right Column: Live Response Studio */}
-                <section className="xl:col-span-7 flex flex-col bg-white dark:bg-[#111622] border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden min-h-[420px]">
+                <section className="xl:col-span-7 flex flex-col min-w-0 bg-white dark:bg-[#111622] border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden min-h-[420px]">
                   <div className="flex flex-wrap items-center justify-between gap-3 px-4 py-2.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-900/50">
                     <div className="flex items-center gap-1 p-0.5 bg-slate-200/70 dark:bg-slate-800 rounded-md">
                       <button
@@ -662,7 +671,7 @@ export default function App() {
                         </span>
                         <span className="text-slate-400" aria-hidden="true">·</span>
                         <span className="text-slate-600 dark:text-slate-400">
-                          {activeResult.latencyMs} ms
+                          {activeResult.cached ? 'Cached' : `${activeResult.latencyMs} ms`}
                         </span>
                         <span className="text-slate-400" aria-hidden="true">·</span>
                         <span className="text-slate-600 dark:text-slate-400">
@@ -683,7 +692,7 @@ export default function App() {
                         </div>
                         <div className="h-32 bg-slate-100 dark:bg-slate-800/50 rounded" />
                       </div>
-                    ) : activeResult?.error ? (
+                    ) : activeResult?.error && responseTab !== 'raw' ? (
                       <div className="p-6 space-y-3">
                         <div className="text-sm font-semibold text-rose-600 dark:text-rose-400">
                           Request failed ({activeResult.status || 'Network'})

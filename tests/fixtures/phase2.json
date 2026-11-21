@@ -1,0 +1,180 @@
+{
+  "open-library": {
+    "numFound": 113,
+    "start": 0,
+    "numFoundExact": true,
+    "num_found": 113,
+    "documentation_url": "https://openlibrary.org/dev/docs/api/search",
+    "q": "The Left Hand of Darkness",
+    "offset": null,
+    "docs": [
+      {
+        "author_name": [
+          "Ursula K. Le Guin"
+        ],
+        "edition_count": 92,
+        "first_publish_year": 1969,
+        "key": "/works/OL59800W",
+        "title": "The Left Hand of Darkness"
+      },
+      {
+        "author_name": [
+          "Harold Bloom"
+        ],
+        "edition_count": 2,
+        "first_publish_year": 1987,
+        "key": "/works/OL18955388W",
+        "title": "Ursula K. Le Guin's the left hand of darkness"
+      }
+    ]
+  },
+  "musicbrainz-artists": {
+    "count": 1,
+    "offset": 0,
+    "artists": [
+      {
+        "id": "00000000-0000-0000-0000-000000000027",
+        "name": "Fixture Artist",
+        "type": "Person",
+        "country": "JP",
+        "disambiguation": "Synthetic artist for rendering tests",
+        "score": 100
+      }
+    ]
+  },
+  "art-institute": {
+    "pagination": {
+      "total": 1
+    },
+    "config": {
+      "iiif_url": "https://www.artic.edu/iiif/2"
+    },
+    "data": [
+      {
+        "id": 28,
+        "title": "Fixture Landscape",
+        "artist_display": "Fixture Artist",
+        "date_display": "1900",
+        "medium_display": "Oil on canvas",
+        "image_id": "fixture-image",
+        "is_public_domain": true,
+        "thumbnail": {
+          "alt_text": "A synthetic landscape test record"
+        }
+      }
+    ]
+  },
+  "nasa-images": {
+    "collection": {
+      "version": "1.1",
+      "href": "http://images-api.nasa.gov/search?q=apollo%2011&media_type=image&page_size=6",
+      "items": [
+        {
+          "href": "https://images-assets.nasa.gov/image/jsc2007e034221/collection.json",
+          "data": [
+            {
+              "album": [
+                "KSC_50th_Anniversary"
+              ],
+              "center": "JSC",
+              "date_created": "1969-07-11T00:00:00Z",
+              "description": "Personnel atop the 402-ft. Mobile Service Structure look back at the Apollo 11 spacecraft as the tower is moved away during a Countdown Demonstration Test. Photo filed 11 July 1969. ",
+              "keywords": [
+                "Apollo",
+                "Apollo 11",
+                "Launch"
+              ],
+              "media_type": "image",
+              "nasa_id": "jsc2007e034221",
+              "title": "Apollo 11 spacecraft pre-launch"
+            }
+          ],
+          "links": [
+            {
+              "href": "https://images-assets.nasa.gov/image/jsc2007e034221/jsc2007e034221~medium.jpg",
+              "rel": "alternate",
+              "render": "image",
+              "width": 975,
+              "size": 176000,
+              "height": 1280
+            },
+            {
+              "href": "https://images-assets.nasa.gov/image/jsc2007e034221/jsc2007e034221~small.jpg",
+              "rel": "alternate",
+              "render": "image",
+              "width": 487,
+              "size": 60000,
+              "height": 640
+            },
+            {
+              "href": "https://images-assets.nasa.gov/image/jsc2007e034221/jsc2007e034221~thumb.jpg",
+              "rel": "preview",
+              "render": "image",
+              "width": 487,
+              "size": 60000,
+              "height": 640
+            },
+            {
+              "href": "https://images-assets.nasa.gov/image/jsc2007e034221/jsc2007e034221~large.jpg",
+              "rel": "alternate",
+              "render": "image",
+              "width": 1463,
+              "size": 332000,
+              "height": 1920
+            },
+            {
+              "href": "https://images-assets.nasa.gov/image/jsc2007e034221/jsc2007e034221~orig.jpg",
+              "rel": "canonical",
+              "render": "image",
+              "height": 3072,
+              "width": 2341,
+              "size": 1402000
+            }
+          ]
+        }
+      ],
+      "metadata": {
+        "total_hits": 1522
+      },
+      "links": [
+        {
+          "rel": "next",
+          "prompt": "Next",
+          "href": "http://images-api.nasa.gov/search?q=apollo+11&media_type=image&page_size=6&page=2"
+        }
+      ]
+    }
+  },
+  "anilist-anime": {
+    "data": {
+      "Page": {
+        "media": [
+          {
+            "id": 30,
+            "title": {
+              "romaji": "Fixture Anime",
+              "english": null
+            },
+            "format": "TV",
+            "episodes": 26,
+            "averageScore": 85,
+            "status": "FINISHED",
+            "seasonYear": 2000,
+            "siteUrl": "https://anilist.co/",
+            "genres": [
+              "Adventure",
+              "Science Fiction"
+            ],
+            "studios": {
+              "nodes": [
+                {
+                  "name": "Fixture Studio"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

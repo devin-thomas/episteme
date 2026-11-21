@@ -1,4 +1,8 @@
 import type { ApiDefinition, ParamValues } from '../types/api';
+import { PHASE1_ADDITIONS } from './phase1Additions';
+import { PHASE2_ADDITIONS } from './phase2Additions';
+import { PHASE3_ADDITIONS } from './phase3Additions';
+import { PHASE4_ADDITIONS } from './phase4Additions';
 
 const CITY_COORDS: Record<string, { lat: string; lon: string; label: string }> = {
   sf: { lat: '37.7749', lon: '-122.4194', label: 'San Francisco' },
@@ -114,7 +118,7 @@ ORDER BY DESC(?launchDate)
 LIMIT 8`,
 };
 
-export const APIS: ApiDefinition[] = [
+const ORIGINAL_APIS: ApiDefinition[] = [
   // =========================================================================
   // PHASE 1: KNOWN KNOWNS — Everyday Signals & Immediate Facts
   // =========================================================================
@@ -1266,5 +1270,15 @@ for await (const model of listModels({
       `curl -s "https://huggingface.co/api/models?pipeline_tag=${encodeURIComponent(v.task || 'text-generation')}&sort=${encodeURIComponent(v.sort || 'downloads')}&direction=-1&limit=6"`,
   },
 ];
+
+// Keep stable IDs while numbering the expanded catalog in display order.
+export const APIS: ApiDefinition[] = [
+  ...ORIGINAL_APIS,
+  ...PHASE1_ADDITIONS,
+  ...PHASE2_ADDITIONS,
+  ...PHASE3_ADDITIONS,
+  ...PHASE4_ADDITIONS,
+].sort((a, b) => a.phase - b.phase)
+  .map((api, index) => ({ ...api, index: String(index + 1).padStart(2, '0') }));
 
 export { GODBOLT_PRESETS, SPARQL_PRESETS };

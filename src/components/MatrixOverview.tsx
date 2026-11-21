@@ -22,7 +22,7 @@ export function MatrixOverview({
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
         <div>
           <div className="text-xs font-medium text-blue-600 dark:text-blue-400">
-            Epistemic Architecture · 20 Keyless APIs
+            Epistemic Architecture · {apis.length} Keyless APIs
           </div>
           <h2 className="text-2xl font-display font-bold mt-1 text-slate-900 dark:text-slate-100">
             The Four Quadrants of Open Information

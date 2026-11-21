@@ -1,0 +1,63 @@
+{
+  "world-bank-indicators": [
+    { "page": 1, "pages": 1, "per_page": 20, "total": 2, "lastupdated": "2026-11-11" },
+    [
+      { "indicator": { "id": "SP.POP.TOTL", "value": "Population, total" }, "country": { "id": "US", "value": "United States" }, "countryiso3code": "USA", "date": "2025", "value": 341784857 },
+      { "indicator": { "id": "SP.POP.TOTL", "value": "Population, total" }, "country": { "id": "US", "value": "United States" }, "countryiso3code": "USA", "date": "2024", "value": null }
+    ]
+  ],
+  "nws-alerts": {
+    "type": "FeatureCollection",
+    "features": [
+      {
+        "id": "https://api.weather.gov/alerts/example",
+        "type": "Feature",
+        "geometry": null,
+        "properties": {
+          "event": "Coastal Flood Advisory",
+          "severity": "Minor",
+          "headline": "Coastal Flood Advisory",
+          "areaDesc": "Coastal Aransas; Coastal Nueces",
+          "expires": "2026-11-21T09:00:00-06:00",
+          "description": "Fixture bulletin for rendering.",
+          "instruction": "Fixture instructions."
+        }
+      }
+    ]
+  },
+  "open-food-facts": {
+    "code": "3017620422003",
+    "status": "success",
+    "result": { "id": "product_found", "name": "Product found" },
+    "warnings": [],
+    "errors": [],
+    "product": {
+      "code": "3017620422003",
+      "product_name": "Nutella",
+      "brands": "Ferrero, Nutella",
+      "quantity": "400 g",
+      "image_front_small_url": "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.879.200.jpg",
+      "nutriscore_grade": "e",
+      "nutriments": { "energy-kcal_100g": 539, "proteins_100g": 6.3, "carbohydrates_100g": 57.5, "fat_100g": 30.9, "sugars_100g": null },
+      "ingredients_text": "Fixture ingredient text.",
+      "allergens_tags": ["en:milk", "en:nuts", "en:soybeans"]
+    }
+  },
+  "npm-downloads": {
+    "start": "2026-11-13",
+    "end": "2026-11-14",
+    "package": "react",
+    "downloads": [
+      { "day": "2026-11-13", "downloads": 41231563 },
+      { "day": "2026-11-14", "downloads": 25623923 }
+    ]
+  },
+  "treasury-interest-rates": {
+    "data": [
+      { "record_date": "2026-10-31", "security_type_desc": "Marketable", "security_desc": "Treasury Bills", "avg_interest_rate_amt": "4.014" },
+      { "record_date": "2026-09-30", "security_type_desc": "Marketable", "security_desc": "Treasury Bills", "avg_interest_rate_amt": "null" }
+    ],
+    "meta": { "count": 2 },
+    "links": { "next": null }
+  }
+}
