@@ -7,7 +7,7 @@ export const PHASES: PhaseMeta[] = [
     title: 'Known Knowns',
     epistemicLabel: 'Everyday Signals & Immediate Facts',
     summary:
-      'Questions you consciously know how to ask against familiar, real-time feeds—weather, markets, live scores, tech headlines, and reference FX rates.',
+      'Direct lookups for weather, markets, sports, news, exchange rates, television, holidays, postal codes, words, and music.',
     questionPrompt: 'Things we know we know — direct lookups with predictable schemas.',
   },
   {
@@ -16,7 +16,7 @@ export const PHASES: PhaseMeta[] = [
     title: 'Known Unknowns',
     epistemicLabel: 'Deep Domain Exploration',
     summary:
-      'Specialized catalogs where you know the domain exists and use structured queries—game mechanics, scholarly preprints, and Sentinel-2 satellite passes—to uncover specifics.',
+      'Search specialized catalogs of games, research, satellite scenes, books, artists, museum collections, space imagery, and anime.',
     questionPrompt: 'Things we know we do not know — structured discovery across specialized archives.',
   },
   {
@@ -25,7 +25,7 @@ export const PHASES: PhaseMeta[] = [
     title: 'Unknown Knowns',
     epistemicLabel: 'Latent Infrastructure & Hidden Telemetry',
     summary:
-      'Systems, historical snapshots, and physical flows already recorded in the world around us that most engineers never realize can be queried openly without credentials.',
+      'Inspect recorded earthquakes, web history, internet routing, biodiversity, electricity, economic indicators, weather alerts, food labels, software usage, and public debt.',
     questionPrompt: 'Things already recorded in plain sight — uncovering latent planetary and digital telemetry.',
   },
   {
@@ -34,7 +34,7 @@ export const PHASES: PhaseMeta[] = [
     title: 'Unknown Unknowns',
     epistemicLabel: 'Frontier Capabilities & Surprise Access',
     summary:
-      'Remote x86-64 compilation, atomic 3D protein structures, semantic graph reasoning, L1 Lagrange space weather, and open-weight AI registries—all live with zero keys.',
+      'Try remote compilation, protein structures, graph queries, space weather, model catalogs, vulnerability lookup, chemistry, astronomical SQL, map queries, and public randomness.',
     questionPrompt: 'Capabilities you did not realize were a single keyless HTTP call away.',
   },
 ];

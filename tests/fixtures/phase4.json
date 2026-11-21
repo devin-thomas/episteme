@@ -1,0 +1,20 @@
+{
+  "osv-vulnerabilities": {
+    "vulns": [{ "id": "GHSA-29mw-wpgm-hmr9", "summary": "Regular Expression Denial of Service (ReDoS) in lodash", "aliases": ["CVE-2020-28500"], "modified": "2024-01-01T00:00:00Z" }]
+  },
+  "pubchem-compounds": {
+    "PropertyTable": { "Properties": [{ "CID": 2519, "MolecularFormula": "C8H10N4O2", "MolecularWeight": "194.19", "InChIKey": "RYYVLZVUVIJVGH-UHFFFAOYSA-N", "IUPACName": "1,3,7-trimethylpurine-2,6-dione", "XLogP": -0.1 }] }
+  },
+  "nasa-exoplanets": [
+    { "pl_name": "Ross 128 b", "hostname": "Ross 128", "discoverymethod": "Radial Velocity", "disc_year": 2017, "pl_rade": 1.11, "pl_orbper": 9.8658, "sy_dist": 3.37454 },
+    { "pl_name": "Synthetic missing-measurement fixture", "hostname": "Fixture", "discoverymethod": "Transit", "disc_year": 2020, "pl_rade": null, "pl_orbper": null, "sy_dist": null }
+  ],
+  "overpass-places": {
+    "version": 0.6,
+    "elements": [{ "type": "node", "id": 1, "lat": 29.4241, "lon": -98.4936, "tags": { "name": "Synthetic café fixture", "amenity": "cafe" } }, { "type": "way", "id": 2, "center": { "lat": 29.425, "lon": -98.493 }, "tags": { "amenity": "library" } }]
+  },
+  "drand-beacon": {
+    "round": 42,
+    "signature": "95a9f9f5b231b7714de1553105d8ffdf3dcda24cfdb1e689319bccf79a9c8ce430a91b811fbfaf763900bc998b5d686a"
+  }
+}

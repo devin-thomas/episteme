@@ -1,6 +1,10 @@
 import { ExternalLink, ArrowUpRight } from 'lucide-react';
 import { ResilientImage } from './ResilientImage';
 import { RawResponsePane } from './RawResponsePane';
+import { Phase1Visuals } from './response/Phase1Visuals';
+import { Phase2Visuals } from './response/Phase2Visuals';
+import { Phase3Visuals } from './response/Phase3Visuals';
+import { Phase4Visuals } from './response/Phase4Visuals';
 
 interface ResponseVisualsProps {
   apiId: string;
@@ -23,6 +27,12 @@ export function ResponseVisuals({ apiId, data }: ResponseVisualsProps) {
   if (!data) return null;
 
   try {
+    const expandedPreview = Phase1Visuals({ apiId, data })
+      ?? Phase2Visuals({ apiId, data })
+      ?? Phase3Visuals({ apiId, data })
+      ?? Phase4Visuals({ apiId, data });
+    if (expandedPreview) return expandedPreview;
+
     switch (apiId) {
       case 'open-meteo': {
         const d = data as {

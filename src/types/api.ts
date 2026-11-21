@@ -68,4 +68,5 @@ export interface ExecutionResult {
   contentType: string;
   data: unknown;
   error?: string;
+  cached?: boolean;
 }
